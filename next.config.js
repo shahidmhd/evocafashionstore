@@ -2,6 +2,8 @@
 const nextConfig = {
   output: 'export',
   trailingSlash: true,
+  basePath: '/evocafashionstore',
+  assetPrefix: '/evocafashionstore/',
   images: {
     unoptimized: true,
     remotePatterns: [
