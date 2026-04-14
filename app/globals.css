@@ -1,0 +1,145 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&family=Montserrat:wght@700;800;900&display=swap');
+
+:root {
+  --font-inter: 'Inter', system-ui, sans-serif;
+  --font-playfair: 'Playfair Display', Georgia, serif;
+  --font-cormorant: 'Cormorant Garamond', Georgia, serif;
+  /* Amber-gold palette — sampled from the illuminated EVOCA sign */
+  --gold:       #d4a020;   /* main letter colour     */
+  --gold-light: #f5d040;   /* highlight / bright face */
+  --gold-mid:   #e8b020;   /* mid glow               */
+  --gold-dark:  #9a6808;   /* shadow / border        */
+  --gold-glow:  #ff9800;   /* warm amber bloom       */
+  --obsidian:   #0a0a0a;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--obsidian);
+  color: #f5f5f5;
+  font-family: var(--font-inter);
+  overflow-x: hidden;
+}
+
+/* Gold text gradient — warm amber matching the logo sign */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #d4a020 0%, #f5d040 45%, #e8b020 70%, #9a6808 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Luxury divider */
+.divider-gold {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #c9a96e, transparent);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+::-webkit-scrollbar-thumb {
+  background: #c9a96e;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #e2c992;
+}
+
+/* Selection */
+::selection {
+  background: rgba(201, 169, 110, 0.3);
+  color: #fff;
+}
+
+/* Button base */
+.btn-gold {
+  @apply inline-flex items-center gap-2 px-8 py-3 border border-gold text-gold font-medium tracking-widest text-xs uppercase transition-all duration-300;
+}
+.btn-gold:hover {
+  @apply bg-gold text-obsidian-900;
+}
+
+.btn-gold-filled {
+  @apply inline-flex items-center gap-2 px-8 py-3 bg-gold text-obsidian-900 font-medium tracking-widest text-xs uppercase transition-all duration-300;
+}
+.btn-gold-filled:hover {
+  @apply bg-gold-light;
+  box-shadow: 0 8px 30px rgba(201, 169, 110, 0.4);
+}
+
+/* Section label */
+.section-label {
+  @apply text-gold tracking-[0.3em] text-xs uppercase font-medium;
+}
+
+/* ─── Illuminated signage logo — replicates backlit LED amber sign ─── */
+/* Used as CSS fallback; primary logo is public/logo.svg (Image component) */
+.logo-sign {
+  font-family: 'Montserrat', 'Arial Black', Arial, system-ui, sans-serif;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  color: #f5d040;                /* bright face */
+  text-shadow:
+    0 0  3px rgba(255, 240, 140, 1.00),   /* core highlight  */
+    0 0  8px rgba(255, 200,  50, 0.95),   /* inner bright    */
+    0 0 18px rgba(240, 160,  10, 0.80),   /* mid amber       */
+    0 0 35px rgba(220, 120,   0, 0.60),   /* warm bloom      */
+    0 0 65px rgba(200,  90,   0, 0.38),   /* wide amber haze */
+    0 0 110px rgba(170, 60,   0, 0.20);   /* far-field glow  */
+}
+
+.logo-sign-dim {
+  font-family: 'Montserrat', 'Arial Black', Arial, system-ui, sans-serif;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  color: #e8b828;
+  text-shadow:
+    0 0  3px rgba(255, 220, 100, 0.90),
+    0 0  8px rgba(240, 170,  30, 0.70),
+    0 0 20px rgba(210, 120,   0, 0.45),
+    0 0 40px rgba(180,  80,   0, 0.25);
+}
+
+.logo-sign:hover,
+.logo-sign-dim:hover {
+  color: #fff0a0;
+  text-shadow:
+    0 0  4px rgba(255, 250, 160, 1.00),
+    0 0 12px rgba(255, 210,  60, 0.95),
+    0 0 25px rgba(240, 160,  10, 0.80),
+    0 0 50px rgba(220, 110,   0, 0.55),
+    0 0 85px rgba(190,  75,   0, 0.35),
+    0 0 130px rgba(160, 50,   0, 0.18);
+  transition: text-shadow 0.35s ease, color 0.35s ease;
+}
+
+/* Card hover */
+.card-luxury {
+  @apply relative overflow-hidden transition-all duration-500;
+}
+.card-luxury::after {
+  content: '';
+  @apply absolute inset-0 opacity-0 transition-opacity duration-500;
+  background: linear-gradient(to top, rgba(201,169,110,0.15) 0%, transparent 60%);
+}
+.card-luxury:hover::after {
+  @apply opacity-100;
+}
