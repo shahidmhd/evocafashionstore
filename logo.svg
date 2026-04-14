@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 90" fill="none" role="img" aria-label="EVOCA Fashion Logo">
+  <defs>
+    <!-- Metallic top-to-bottom gradient matching the sign photo -->
+    <linearGradient id="metal" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   stop-color="#fef0a0"/>
+      <stop offset="20%"  stop-color="#f5d040"/>
+      <stop offset="50%"  stop-color="#d49010"/>
+      <stop offset="80%"  stop-color="#b07008"/>
+      <stop offset="100%" stop-color="#7a4e04"/>
+    </linearGradient>
+
+    <!-- Wide amber bloom — outermost glow ring -->
+    <filter id="bloom" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="14" result="b"/>
+      <feFlood flood-color="#ff8800" flood-opacity="0.55" result="c"/>
+      <feComposite in="c" in2="b" operator="in" result="g1"/>
+      <feGaussianBlur in="SourceAlpha" stdDeviation="6"  result="b2"/>
+      <feFlood flood-color="#ffcc20" flood-opacity="0.65" result="c2"/>
+      <feComposite in="c2" in2="b2" operator="in" result="g2"/>
+      <feMerge>
+        <feMergeNode in="g1"/>
+        <feMergeNode in="g2"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Tight bright core edge light -->
+    <filter id="edge" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="1.5" result="b"/>
+      <feFlood flood-color="#fff0a0" flood-opacity="1" result="c"/>
+      <feComposite in="c" in2="b" operator="in" result="g"/>
+      <feMerge>
+        <feMergeNode in="g"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Layer 1: outermost wide amber bloom -->
+  <text x="210" y="72"
+    text-anchor="middle"
+    font-family="'Arial Black', 'Arial Bold', Arial, sans-serif"
+    font-weight="900"
+    font-size="78"
+    letter-spacing="16"
+    fill="#ffa020"
+    opacity="0.45"
+    filter="url(#bloom)">EVOCA</text>
+
+  <!-- Layer 2: mid glow ring — warm amber -->
+  <text x="210" y="72"
+    text-anchor="middle"
+    font-family="'Arial Black', 'Arial Bold', Arial, sans-serif"
+    font-weight="900"
+    font-size="78"
+    letter-spacing="16"
+    fill="#ffcc30"
+    opacity="0.55"
+    filter="url(#bloom)">EVOCA</text>
+
+  <!-- Layer 3: edge highlight -->
+  <text x="210" y="72"
+    text-anchor="middle"
+    font-family="'Arial Black', 'Arial Bold', Arial, sans-serif"
+    font-weight="900"
+    font-size="78"
+    letter-spacing="16"
+    fill="#ffeea0"
+    filter="url(#edge)">EVOCA</text>
+
+  <!-- Layer 4: main metallic face -->
+  <text x="210" y="72"
+    text-anchor="middle"
+    font-family="'Arial Black', 'Arial Bold', Arial, sans-serif"
+    font-weight="900"
+    font-size="78"
+    letter-spacing="16"
+    fill="url(#metal)">EVOCA</text>
+</svg>
