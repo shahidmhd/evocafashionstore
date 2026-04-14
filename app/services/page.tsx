@@ -154,7 +154,7 @@ export default function ServicesPage() {
           <Image
             src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=80"
             alt="Evoca Fashion Services"
-            fill className="object-cover" unoptimized
+            fill className="object-cover" unoptimized loading="lazy"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-obsidian-900 via-obsidian-900/65 to-obsidian-900/25" />
         </div>
@@ -301,7 +301,7 @@ export default function ServicesPage() {
           <Image
             src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=1600&q=80"
             alt="Visit Evoca"
-            fill className="object-cover opacity-15" unoptimized
+            fill className="object-cover opacity-15" unoptimized loading="lazy"
           />
           <div className="absolute inset-0 bg-obsidian-900/85" />
         </div>
