@@ -1,5 +1,7 @@
 'use client'
 
+const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? ''
+
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -51,7 +53,7 @@ export default function Navbar() {
             {/* Logo */}
             <Link href="/" className="flex items-center leading-none group select-none">
               <Image
-                src="/assets/logo.png"
+                src={`${BASE}/assets/logo.png`}
                 alt="EVOCA Fashion Store"
                 width={160}
                 height={52}
@@ -120,7 +122,7 @@ export default function Navbar() {
             <div className="flex flex-col justify-center items-center flex-1 gap-10 px-8">
               <div className="flex flex-col items-center mb-6">
                 <Image
-                  src="/assets/logo.png"
+                  src={`${BASE}/assets/logo.png`}
                   alt="EVOCA Fashion Store"
                   width={260}
                   height={84}

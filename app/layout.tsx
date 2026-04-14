@@ -41,6 +41,10 @@ export const metadata: Metadata = {
     title: 'Evoca Fashion | Premium Men\'s & Bridal Collection',
     description: 'Premium men\'s clothing, bridal collections, wedding rentals & customized stitching across Kerala.',
   },
+  icons: {
+    icon: `${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/assets/favicon.ico`,
+    shortcut: `${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/assets/favicon.ico`,
+  },
   robots: {
     index: true,
     follow: true,

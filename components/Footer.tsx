@@ -1,5 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
+
+const BASE = process.env.NEXT_PUBLIC_BASE_PATH ?? ''
 import { MapPin, Phone, Mail, Instagram, Facebook, Youtube } from 'lucide-react'
 
 const footerLinks = {
@@ -39,7 +41,7 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <Link href="/" className="inline-block mb-6 select-none group">
               <Image
-                src="/assets/logo.png"
+                src={`${BASE}/assets/logo.png`}
                 alt="EVOCA Fashion Store"
                 width={170}
                 height={56}
